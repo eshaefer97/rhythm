@@ -29,22 +29,22 @@
 //////////////////////////////////////////////////////////////////////////////////
 module LED_controller#(
 	parameter ms_wait  	= 99,
-   parameter ms_clk1_a 	= 100,
-	parameter ms_clk11_a = 140
+  	parameter ms_clk1_a 	= 100,
+	parameter ms_clk11_a 	= 140
 	)
 	(
     output reg dat_out,
-	 input wire	reset,
-	 input wire clk,
-	 input wire enable,
-    input wire [23:0] led1,
-    input wire [23:0] led2,
-    input wire [23:0] led3,
-    input wire [23:0] led4,
-    input wire [23:0] led5,
-    input wire [23:0] led6,
-    input wire [23:0] led7,
-    input wire [23:0] led8
+	input wire	reset,
+	input wire 	clk,
+	input wire 	enable,
+    input wire [23:0] 	led1,
+    input wire [23:0] 	led2,
+    input wire [23:0] 	led3,
+    input wire [23:0] 	led4,
+    input wire [23:0] 	led5,
+    input wire [23:0] 	led6,
+    input wire [23:0] 	led7,
+    input wire [23:0] 	led8
     );
 	
 	reg [15:0] bit_state, LED_state; // state registers
@@ -111,7 +111,7 @@ always @(posedge clk) begin // per-led loop going through 24 bits
 				
 				led_bit<=GRB_reg[GRB_state]; // set bit
 				
-					GRB_state<=GRB_state+1;
+				GRB_state<=GRB_state+1;
 				
 				if (GRB_state == 23) // reset after 24 bits are sent
 					GRB_state <= 0; 
