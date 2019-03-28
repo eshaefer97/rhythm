@@ -23,13 +23,13 @@ module ADC_input #(
 	parameter ms_clk11_a = 140
 	)
 	(
-	input wire			reset,
-	input wire			dataclk,
+	input wire		reset,
+	input wire		dataclk,
 	input wire [31:0]	main_state,
 	input wire [5:0]	channel,
-	input wire			ADC_DOUT,
-	output reg			ADC_CS,
-	output reg			ADC_SCLK,
+	input wire		ADC_DOUT,
+	output reg		ADC_CS,
+	output reg		ADC_SCLK,
 	output reg [15:0]	ADC_register
 	);
 
