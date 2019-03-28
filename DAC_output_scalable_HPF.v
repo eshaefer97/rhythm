@@ -25,35 +25,35 @@ module DAC_output_scalable_HPF #(
 	parameter ms_clk11_a = 140
 	)
 	(
-	input wire			reset,
-	input wire			dataclk,
-	input wire [31:0] main_state,
+	input wire		reset,
+	input wire		dataclk,
+	input wire [31:0] 	main_state,
 	input wire [5:0]	channel,
 	input wire [15:0]	DAC_input,
-	input wire			DAC_en,
-	input wire [2:0]  gain,
-	input wire [6:0]  noise_suppress,
-	output reg			DAC_SYNC,
-	output reg			DAC_SCLK,
-	output reg			DAC_DIN,
+	input wire		DAC_en,
+	input wire [2:0]  	gain,
+	input wire [6:0]  	noise_suppress,
+	output reg		DAC_SYNC,
+	output reg		DAC_SCLK,
+	output reg		DAC_DIN,
 	input wire [15:0]	DAC_thrsh,
-	input wire			DAC_thrsh_pol,
-	output wire			DAC_thrsh_out,
-	input wire [15:0] HPF_coefficient,
-	input wire			HPF_en
+	input wire		DAC_thrsh_pol,
+	output wire		DAC_thrsh_out,
+	input wire [15:0] 	HPF_coefficient,
+	input wire		HPF_en
    );
 
-	wire [15:0]    DAC_input_twos_comp, DAC_input_offset, DAC_register, subtract_result, add_result;
-	reg  [15:0]    DAC_input_suppressed, DAC_input_scaled;
+	wire [15:0]    	DAC_input_twos_comp, DAC_input_offset, DAC_register, subtract_result, add_result;
+	reg  [15:0]    	DAC_input_suppressed, DAC_input_scaled;
 	wire [10:0] 	noise_suppress_x_16;
 	wire [17:0] 	HPF_input, multiplier_in;
 	wire [18:0] 	multiplier_in_before_limit;
-	wire [15:0]    HPF_output;
-	wire [31:0]    HPF_new_state;
-	wire [35:0]		multiplier_out;
+	wire [15:0]    	HPF_output;
+	wire [31:0]    	HPF_new_state;
+	wire [35:0]	multiplier_out;
 	reg  [31:0] 	HPF_state;
-	wire 				positive_overflow, negative_overflow;
-	reg				state_clk;
+	wire 		positive_overflow, negative_overflow;
+	reg		state_clk;
 	
 	// Implement one-pole high-pass filter
 	
