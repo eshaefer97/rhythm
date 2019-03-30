@@ -74,22 +74,22 @@ module SDRAM_FIFO  #(
 	(
 	
 	// Clocks
-	input wire										  ti_clk,			// 48 MHz clock from Opal Kelly Host
-	input wire										  data_in_clk, 	// clock domain for FIFO input; variable
-   input wire                               clk1_in,			// this should be a 100MHz clock tied to FPGA
-	output wire										  clk1_out, 		// buffered 100 MHz clock out, if needed for other uses
+	input wire			ti_clk,			// 48 MHz clock from Opal Kelly Host
+	input wire			data_in_clk, 	// clock domain for FIFO input; variable
+  	input wire                      clk1_in,			// this should be a 100MHz clock tied to FPGA
+	output wire			clk1_out, 		// buffered 100 MHz clock out, if needed for other uses
 	
 	// FIFO interface
-	input wire										  reset,
+	input wire			reset,
 
-	input wire 										  FIFO_write_to,
-	input wire [15:0] 							  FIFO_data_in,
-	input wire										  FIFO_read_from,
-	output wire [15:0]							  FIFO_data_out,
+	input wire 			FIFO_write_to,
+	input wire [15:0] 		FIFO_data_in,
+	input wire			FIFO_read_from,
+	output wire [15:0]		FIFO_data_out,
 
 
 	// FIFO capacity monitor
-	output wire [31:0]							  num_words_in_FIFO,
+	output wire [31:0]		num_words_in_FIFO,
 	
 
 	// I/O connections from Xilinx FPGA to 128-MiByte SDRAM
