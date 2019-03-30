@@ -21,17 +21,17 @@
 //                Port B is configured to be read-only, used by the RHD2000 SPI interface.
 
 module RAM_bank(
-	input wire 				   clk_A,
-	input wire  				clk_B,
-	input wire  [3:0]			RAM_bank_sel_A,
+	input wire 		clk_A,
+	input wire  		clk_B,
+	input wire  [3:0]	RAM_bank_sel_A,
 	input wire  [3:0]       RAM_bank_sel_B,
-	input wire  [9:0] 		RAM_addr_A,
-	input wire  [9:0] 		RAM_addr_B,
-	input	wire  [15:0] 		RAM_data_in,
-	output reg  [15:0]	   RAM_data_out_A,
-	output reg  [15:0]	   RAM_data_out_B,
-	input	wire				   RAM_we,
-	input wire				   reset
+	input wire  [9:0] 	RAM_addr_A,
+	input wire  [9:0] 	RAM_addr_B,
+	input	wire  [15:0] 	RAM_data_in,
+	output reg  [15:0]	RAM_data_out_A,
+	output reg  [15:0]	RAM_data_out_B,
+	input	wire		RAM_we,
+	input wire		reset
 );
 
 	wire [15:0] RAM_data_out_A_0, RAM_data_out_A_1, RAM_data_out_A_2, RAM_data_out_A_3, RAM_data_out_A_4, RAM_data_out_A_5, RAM_data_out_A_6, RAM_data_out_A_7, RAM_data_out_A_8, RAM_data_out_A_9, RAM_data_out_A_10, RAM_data_out_A_11, RAM_data_out_A_12, RAM_data_out_A_13, RAM_data_out_A_14, RAM_data_out_A_15;
