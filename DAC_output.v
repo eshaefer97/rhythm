@@ -19,19 +19,19 @@
 
 module DAC_output #(
 	parameter ms_wait  	= 99,
-   parameter ms_clk1_a 	= 100,
-	parameter ms_clk11_a = 140
+   parameter ms_clk1_a 		= 100,
+	parameter ms_clk11_a 	= 140
 	)
 	(
-	input wire			reset,
-	input wire			dataclk,
-	input wire [31:0] main_state,
+	input wire		reset,
+	input wire		dataclk,
+	input wire [31:0] 	main_state,
 	input wire [5:0]	channel,
 	input wire [15:0]	DAC_register,
-	input wire			DAC_en,
-	output reg			DAC_SYNC,
-	output reg			DAC_SCLK,
-	output reg			DAC_DIN
+	input wire		DAC_en,
+	output reg		DAC_SYNC,
+	output reg		DAC_SCLK,
+	output reg		DAC_DIN
    );
 
 	// AD5662 16-bit DAC SPI output logic
@@ -41,14 +41,14 @@ module DAC_output #(
 		if (reset) begin
 			DAC_SYNC <= 1'b1;
 			DAC_SCLK <= 1'b0;
-			DAC_DIN <= 1'b0;
+			DAC_DIN <=  1'b0;
 		end else begin
 			case (main_state)
 			
 				ms_wait: begin
 					DAC_SYNC <= 1'b1;
 					DAC_SCLK <= 1'b0;
-					DAC_DIN <= 1'b0;
+					DAC_DIN <=  1'b0;
 				end
 			
 				ms_clk1_a: begin
@@ -57,19 +57,19 @@ module DAC_output #(
 						0: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						1: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						2: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						3: begin
@@ -81,43 +81,43 @@ module DAC_output #(
 						4: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						5: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						6: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						7: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						8: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						9: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						10: begin
 							DAC_SYNC <= 1'b1;
 							DAC_SCLK <= 1'b0;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						11: begin
@@ -129,31 +129,31 @@ module DAC_output #(
 						12: begin
 							DAC_SYNC <= 1'b0;
 							DAC_SCLK <= 1'b1;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						13: begin
 							DAC_SYNC <= 1'b0;
 							DAC_SCLK <= 1'b1;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						14: begin
 							DAC_SYNC <= 1'b0;
 							DAC_SCLK <= 1'b1;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						15: begin
 							DAC_SYNC <= 1'b0;
 							DAC_SCLK <= 1'b1;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						16: begin
 							DAC_SYNC <= 1'b0;
 							DAC_SCLK <= 1'b1;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						17: begin
@@ -165,7 +165,7 @@ module DAC_output #(
 						18: begin
 							DAC_SYNC <= 1'b0;
 							DAC_SCLK <= 1'b1;
-							DAC_DIN <= 1'b0;
+							DAC_DIN <=  1'b0;
 						end
 						
 						19: begin
@@ -267,7 +267,7 @@ module DAC_output #(
 					endcase
 				end
 				
-				ms_clk11_a: begin
+					ms_clk11_a: begin
 					DAC_SCLK <= 1'b0;
 				end
 			
